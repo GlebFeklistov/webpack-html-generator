@@ -23,7 +23,7 @@ To make it work, you need to provide these **required parameters**:
 
 And you can provide some other *optional parameters*:
 - `lang`: The `lang` attribute for html tag.
-- `manifest`: The `manifest` for html tag.
+- `manifest`: The `manifest` attribute for html tag.
 - `head`: The `<head>` tag configuration.
 - `body`: The `<body>` tag configuration.
 - `window`: The custom `<script>` tag to pass initial values for application.
