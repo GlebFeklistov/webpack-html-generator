@@ -1,10 +1,10 @@
 # HTML Webpack Generator
 
-This is a clear and powerfull template generator for the [webpack](http://webpack.github.io/) plugin [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin).
+This is a clear and powerful template generator for the [webpack](http://webpack.github.io/) plugin [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin).
 It has a many extra features than the [default template](https://github.com/jantimon/html-webpack-plugin/blob/master/default_index.ejs).
 You have full control of generated template with few line config.
-No provided default tags or attributes without your needs. 
-Compatable with other [html-webpack-plugins](https://github.com/jantimon/html-webpack-plugin).
+No provided default tags or attributes without your needs.
+Compatible with other [html-webpack-plugins](https://github.com/jantimon/html-webpack-plugin).
 
 ## Installation
 
@@ -26,7 +26,7 @@ And you can provide some other *optional parameters*:
 - `manifest`: The `manifest` for html tag.
 - `head`: The `<head>` tag configuration.
 - `body`: The `<body>` tag configuration.
-- `window`: The custom `<script>` tag to pass initial values for application. 
+- `window`: The custom `<script>` tag to pass initial values for application.
 
 ### Example
 
@@ -87,7 +87,7 @@ Here's an example webpack config illustrating how to use these options in your `
 }
 ```
 
-Another example with deferent body tags configuration concept and identical output
+Another example with different body tags configuration concept and identical output
 
 ```js
 {
