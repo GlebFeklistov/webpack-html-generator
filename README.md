@@ -26,7 +26,7 @@ And you can provide some other *optional parameters*:
 - `manifest`: The `manifest` attribute for html tag.
 - `head`: The `<head>` tag configuration.
 - `body`: The `<body>` tag configuration.
-- `window`: The custom `<script>` tag to pass initial values for application.
+- - `window`: The custom `<script>` tag to pass initial values for application.
 
 ### Example
 
