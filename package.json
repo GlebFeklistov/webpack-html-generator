@@ -1,0 +1,26 @@
+{
+  "name": "webpack-html-generator",
+  "version": "1.0.0",
+  "description": "Webpack ",
+  "main": "lib/index.js",
+  "keywords": [
+    "webpack",
+    "prod",
+    "production",
+    "server",
+    "express",
+    "build",
+    "development",
+    "template",
+    "html",
+    "plugin",
+    "index.html",
+    "index.ejs"
+  ],
+  "author": "Gleb Feklistov",
+  "license": "MIT",
+  "bugs": "https://github.com/GlebFeklistov/webpack-html-generator/issues",
+  "repository": "https://github.com/GlebFeklistov/webpack-html-generator.git",
+  "homepage": "https://github.com/GlebFeklistov/webpack-html-generator#readme",
+  "source": true
+}
