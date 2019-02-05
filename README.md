@@ -35,54 +35,54 @@ Here's an example webpack config illustrating how to use these options in your `
 {
   // ...
   plugins: [
-        new HtmlWebpackPlugin({
-            inject: false,
-            template: require('webpack-html-generator'),
-            head: {
-                title: 'App title',
-                meta: [{
-                    charset: 'utf-8'
-                }, {
-                    content: 'ie=edge',
-                    'http-equiv': 'x-ua-compatible'
-                }, {
-                    name: 'viewport',
-                    content: 'width=device-width, initial-scale=1'
-                }, {
-                    name: 'description',
-                    content: 'A better default template for html-webpack-plugin'
-                }]
-            },
-            body: {
-                script: [{
-                    src: '/bootstrap.js'
-                }],
-                div: [{
-                    id: 'canvas'
-                }, {
-                    id: 'root'
-                }],
-                span: {
-                    innerHTML: '<div>Hello world</div>'
-                },
-                img: {
-                    src: '/logo.png'
-                },
-                window: {
-                    __INITIAL_STATE__: JSON.stringify({ a: true, b: 'John Doe'})
-                }
-            }
-        }),
-        new FaviconsWebpackPlugin({
-            inject: true,
-            logo: './src/logo.png'
-        }),
-        new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css"
-        }),
-        new webpack.HotModuleReplacementPlugin()
-    ]
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: require('webpack-html-generator'),
+      head: {
+        title: 'App title',
+        meta: [{
+          charset: 'utf-8'
+        }, {
+          content: 'ie=edge',
+          'http-equiv': 'x-ua-compatible'
+        }, {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1'
+        }, {
+          name: 'description',
+          content: 'A better default template for html-webpack-plugin'
+        }]
+      },
+      body: {
+        script: [{
+          src: '/bootstrap.js'
+        }],
+        div: [{
+          id: 'canvas'
+        }, {
+          id: 'root'
+        }],
+        span: {
+          innerHTML: '<div>Hello world</div>'
+        },
+        img: {
+          src: '/logo.png'
+        },
+        window: {
+          __INITIAL_STATE__: JSON.stringify({a: true, b: 'John Doe'})
+        }
+      }
+    }),
+    new FaviconsWebpackPlugin({
+      inject: true,
+      logo: './src/logo.png'
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 }
 ```
 
@@ -92,59 +92,59 @@ Another example with deferent body tags configuration concept and identical outp
 {
   // ...
   plugins: [
-        new HtmlWebpackPlugin({
-            inject: false,
-            template: require('webpack-html-generator'),
-            head: {
-                title: 'App title',
-                meta: [{
-                    charset: 'utf-8'
-                }, {
-                    content: 'ie=edge',
-                    'http-equiv': 'x-ua-compatible'
-                }, {
-                    name: 'viewport',
-                    content: 'width=device-width, initial-scale=1'
-                }, {
-                    name: 'description',
-                    content: 'A better default template for html-webpack-plugin'
-                }]
-            },
-            body: [{
-                script: {
-                    src: '/bootstrap.js'
-                }
-            }, {
-                div: {
-                    id: 'canvas'
-                }
-            }, {
-                div: {
-                    id: 'root'
-                }
-            }, {
-                span: {
-                    innerHTML: '<div>Hello world</div>'
-                }
-            }, {
-                img: {
-                    src: '/logo.png'
-                }
-            }, {
-                window: {
-                    __INITIAL_STATE__: JSON.stringify({ a: true, b: 'John Doe'})
-                }
-            }]
-        }),
-        new FaviconsWebpackPlugin({
-            inject: true,
-            logo: './src/logo.png'
-        }),
-        new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css"
-        }),
-        new webpack.HotModuleReplacementPlugin()
-    ]
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: require('webpack-html-generator'),
+      head: {
+        title: 'App title',
+        meta: [{
+          charset: 'utf-8'
+        }, {
+          content: 'ie=edge',
+          'http-equiv': 'x-ua-compatible'
+        }, {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1'
+        }, {
+          name: 'description',
+          content: 'A better default template for html-webpack-plugin'
+        }]
+      },
+      body: [{
+        script: {
+          src: '/bootstrap.js'
+        }
+      }, {
+        div: {
+          id: 'canvas'
+        }
+      }, {
+        div: {
+          id: 'root'
+        }
+      }, {
+        span: {
+          innerHTML: '<div>Hello world</div>'
+        }
+      }, {
+        img: {
+          src: '/logo.png'
+        }
+      }, {
+        window: {
+          __INITIAL_STATE__: JSON.stringify({a: true, b: 'John Doe'})
+        }
+      }]
+    }),
+    new FaviconsWebpackPlugin({
+      inject: true,
+      logo: './src/logo.png'
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 }
 ```
