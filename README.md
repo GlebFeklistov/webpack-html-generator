@@ -21,9 +21,10 @@ To make it work, you need to provide these **required parameters**:
 - `inject: false`
 - `template: require('html-webpack-generator')`
 
-And you can provide some other *optional parameters*:
+And you can provide some *optional parameters*:
 - `lang`: The `lang` attribute for html tag.
 - `manifest`: The `manifest` attribute for html tag.
+- `dir`: The `dir` attribute for html tag.
 - `head`: The `<head>` tag configuration.
 - `body`: The `<body>` tag configuration.
 - - `window`: The custom `<script>` tag to pass initial values for application.
