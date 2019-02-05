@@ -1,9 +1,10 @@
 # HTML Webpack Generator
 
-This is a clear and powerfull template generator for the [webpack](http://webpack.github.io/) plugin [html-webpack-plugin](https://www.npmjs.com/package/html-webpack-plugin).
+This is a clear and powerfull template generator for the [webpack](http://webpack.github.io/) plugin [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin).
 It has a many extra features than the [default template](https://github.com/jantimon/html-webpack-plugin/blob/master/default_index.ejs).
 You have full control of generated template with few line config.
-No provided default tags or attributes without your needs.
+No provided default tags or attributes without your needs. 
+Compatable with other [html-webpack-plugins](https://github.com/jantimon/html-webpack-plugin).
 
 ## Installation
 
