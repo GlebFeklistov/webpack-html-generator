@@ -21,7 +21,7 @@ To make it work, you need to provide these **required parameters**:
 - `inject: false`
 - `template: require('html-webpack-generator')`
 
-And you can provide some *optional parameters*:
+And you can provide some **optional parameters**:
 - `lang`: The `lang` attribute for html tag.
 - `manifest`: The `manifest` attribute for html tag.
 - `dir`: The `dir` attribute for html tag.
