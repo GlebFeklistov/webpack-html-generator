@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha lib/index.test.js",
-    "semantic-release": "semantic-release && npm publish"
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "webpack",
