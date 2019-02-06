@@ -3,6 +3,9 @@
   "version": "1.0.1",
   "description": "Webpack ",
   "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha lib/index.test.js -w"
+  },
   "keywords": [
     "webpack",
     "prod",
@@ -22,5 +25,10 @@
   "bugs": "https://github.com/GlebFeklistov/webpack-html-generator/issues",
   "repository": "https://github.com/GlebFeklistov/webpack-html-generator.git",
   "homepage": "https://github.com/GlebFeklistov/webpack-html-generator#readme",
-  "source": true
+  "source": true,
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "lodash": "^4.17.11",
+    "mocha": "^5.2.0"
+  }
 }
