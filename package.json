@@ -9,17 +9,13 @@
   },
   "keywords": [
     "webpack",
-    "prod",
-    "production",
-    "server",
-    "express",
-    "build",
-    "development",
+    "html-webpack-plugin",
     "template",
     "html",
-    "plugin",
-    "index.html",
-    "index.ejs"
+    "ejs",
+    "development",
+    "production",
+    "build"
   ],
   "author": "Gleb Feklistov",
   "license": "MIT",
