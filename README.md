@@ -16,7 +16,7 @@ Compatible with other [html-webpack-plugins](https://github.com/jantimon/html-we
 Install the template in your project with npm:
 
 ```shell
-$ npm i html-webpack-template --save-dev
+$ npm i -D html-webpack-template
 ```
 
 ## Basic Usage
