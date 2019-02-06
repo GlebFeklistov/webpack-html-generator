@@ -4,6 +4,7 @@
   "description": "Webpack ",
   "main": "lib/index.js",
   "scripts": {
+    "commit": "git-cz",
     "test": "mocha lib/index.test.js",
     "semantic-release": "semantic-release"
   },
@@ -25,8 +26,15 @@
   "source": true,
   "devDependencies": {
     "chai": "^4.2.0",
+    "ghooks": "^2.0.4",
     "lodash": "^4.17.11",
     "mocha": "^5.2.0",
-    "semantic-release": "^15.13.3"
+    "semantic-release": "^15.13.3",
+    "commitizen": "^3.0.5"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run test"
+    }
   }
 }
