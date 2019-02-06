@@ -8,8 +8,6 @@ cache:
 branches:
   only:
     - master
-notifications:
-  email: false
 before_script:
   - npm prune
 script:
