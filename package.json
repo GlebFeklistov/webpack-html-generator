@@ -37,7 +37,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test && npm run coverage"
+      "pre-commit": "npm run test"
     },
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"

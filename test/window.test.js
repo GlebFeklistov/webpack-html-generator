@@ -1,7 +1,7 @@
 const {expect} = require('chai');
 const window = require('../lib/generator/window');
 
-describe('window plugin input params', () => {
+describe('window params', () => {
   it('undefined', () => {
     const result = window();
     expect(result).to.be.a('null');
