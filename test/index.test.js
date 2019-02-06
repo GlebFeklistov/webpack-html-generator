@@ -1,21 +1,16 @@
 const {expect} = require('chai');
 const lodash = require('lodash');
 const fs = require('fs');
-const template = lodash.template(fs.readFileSync(require('../lib/index'), 'utf-8'));
+const component = lodash.template(fs.readFileSync(require('../lib/index'), 'utf-8'));
 
 describe('html-webpack-generator', () => {
   it('zero config', () => {
-    const html = template({require: require, htmlWebpackPlugin: null});
+    const html = component({require: require, htmlWebpackPlugin: null});
     expect(html).to.be.a('string');
   });
 
-  /*it('empty config', () => {
-    const html = template({require: require, htmlWebpackPlugin: {}});
-    expect(html).to.be.a('string');
-  });
-
-  it('html structure', () => {
-    const html = template({require: require, htmlWebpackPlugin: null });
+  it('html', () => {
+    const html = component({require: require, htmlWebpackPlugin: null });
     expect(html)
       .to.have.string('<!DOCTYPE html>')
       .with.have.string('<html>')
@@ -24,5 +19,5 @@ describe('html-webpack-generator', () => {
       .with.have.string('<body>')
       .with.have.string('</body>')
       .with.have.string('</html>')
-  });*/
+  });
 });

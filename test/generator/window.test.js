@@ -1,25 +1,18 @@
 const {expect} = require('chai');
-const window = require('../../lib/generator/window');
+const component = require('../../lib/generator/window');
 
 describe('window params', () => {
-  it('undefined', () => {
-    const result = window();
-    expect(result).to.be.a('null');
+  it('zero config', () => {
+    expect(component()).to.be.a('null');
   });
 
-  it('empty object', () => {
-    const result = window({});
-    expect(result).to.be.a('string')
-      .with.have.string('<script type="text/javascript">')
-      .with.have.string('</script>')
-  });
-
-  it('object', () => {
-    const result = window({
-      __INIT__: JSON.stringify({name: 'John Doe'})
-    });
-    expect(result).to.be.a('string')
-      .with.have.string('<script type="text/javascript">')
-      .with.have.string('</script>')
+  it('full config', () => {
+    expect(component({
+      __INIT__: JSON.stringify({name: 'John Doe'}),
+      __REDUX__: JSON.stringify({app: 'Application'}),
+    })).to.be.a('array')
+      .with.length(3)
+      .with.include('script')
+      .with.include('script')
   });
 });
