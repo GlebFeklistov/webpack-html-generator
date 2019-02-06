@@ -1,10 +1,10 @@
 {
   "name": "webpack-html-generator",
-  "version": "1.0.1",
+  "version": "0.0.0-semanticaly-released",
   "description": "Webpack ",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha lib/index.test.js -w"
+    "test": "mocha lib/index.test.js"
   },
   "keywords": [
     "webpack",
