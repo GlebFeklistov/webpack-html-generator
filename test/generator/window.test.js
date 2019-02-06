@@ -1,7 +1,7 @@
 const {expect} = require('chai');
 const component = require('../../lib/generator/window');
 
-describe('window params', () => {
+describe('window', () => {
   it('zero config', () => {
     expect(component()).to.be.a('null');
   });

@@ -3,7 +3,7 @@ const lodash = require('lodash');
 const fs = require('fs');
 const component = lodash.template(fs.readFileSync(require('../lib/index'), 'utf-8'));
 
-describe('html-webpack-generator', () => {
+describe('html-webpack-template', () => {
   it('zero config', () => {
     const html = component({require: require, htmlWebpackPlugin: null});
     expect(html).to.be.a('string');
