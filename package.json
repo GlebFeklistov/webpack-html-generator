@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "commit": "git-cz",
-    "test": "mocha lib/index.test.js",
+    "coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "test": "nyc --reporter=lcov --reporter=text mocha",
     "semantic-release": "semantic-release"
   },
   "keywords": [
@@ -26,16 +27,17 @@
   "source": true,
   "devDependencies": {
     "chai": "^4.2.0",
+    "commitizen": "^3.0.5",
+    "cz-conventional-changelog": "^2.1.0",
     "ghooks": "^2.0.4",
     "lodash": "^4.17.11",
     "mocha": "^5.2.0",
-    "semantic-release": "^15.13.3",
-    "commitizen": "^3.0.5",
-    "cz-conventional-changelog": "^2.1.0"
+    "nyc": "^13.2.0",
+    "semantic-release": "^15.13.3"
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test"
+      "pre-commit": "npm run test && npm run coverage"
     },
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
