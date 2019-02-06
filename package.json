@@ -1,5 +1,5 @@
 {
-  "name": "webpack-html-generator",
+  "name": "webpack-html-template",
   "version": "0.0.0-development",
   "description": "Webpack ",
   "main": "lib/index.js",
@@ -21,9 +21,9 @@
   ],
   "author": "Gleb Feklistov",
   "license": "MIT",
-  "bugs": "https://github.com/GlebFeklistov/webpack-html-generator/issues",
-  "repository": "https://github.com/GlebFeklistov/webpack-html-generator.git",
-  "homepage": "https://github.com/GlebFeklistov/webpack-html-generator#readme",
+  "bugs": "https://github.com/GlebFeklistov/webpack-html-template/issues",
+  "repository": "https://github.com/GlebFeklistov/webpack-html-template.git",
+  "homepage": "https://github.com/GlebFeklistov/webpack-html-template#readme",
   "source": true,
   "devDependencies": {
     "chai": "^4.2.0",
