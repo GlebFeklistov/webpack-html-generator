@@ -6,7 +6,7 @@
   "scripts": {
     "commit": "git-cz",
     "coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "test": "nyc --reporter=lcov --reporter=text mocha",
+    "test": "nyc --reporter=lcov --reporter=text mocha --recursive",
     "semantic-release": "semantic-release"
   },
   "keywords": [

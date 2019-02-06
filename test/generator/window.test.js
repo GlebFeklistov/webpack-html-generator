@@ -1,5 +1,5 @@
 const {expect} = require('chai');
-const window = require('../lib/generator/window');
+const window = require('../../lib/generator/window');
 
 describe('window params', () => {
   it('undefined', () => {
