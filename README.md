@@ -1,5 +1,7 @@
 # HTML Webpack Generator
 
+[![Build Status](https://travis-ci.org/GlebFeklistov/webpack-html-generator.svg?branch=master&style=flat-square)](https://travis-ci.org/GlebFeklistov/webpack-html-generator)
+
 This is a clear and powerful template generator for the [webpack](http://webpack.github.io/) plugin [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin).
 It has a many extra features than the [default template](https://github.com/jantimon/html-webpack-plugin/blob/master/default_index.ejs).
 You have full control of generated template with few line config.
