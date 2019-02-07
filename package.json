@@ -5,8 +5,9 @@
   "main": "lib/index.js",
   "scripts": {
     "commit": "git-cz",
-    "coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "test": "nyc --reporter=lcov --reporter=text mocha --recursive",
+    "coverage-check": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "coverage-report": "cat ./coverage/lcov.info | codecov",
     "semantic-release": "semantic-release"
   },
   "keywords": [
@@ -27,6 +28,7 @@
   "source": true,
   "devDependencies": {
     "chai": "^4.2.0",
+    "codecov.io": "^0.1.6",
     "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
     "ghooks": "^2.0.4",
@@ -37,7 +39,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test && npm run coverage"
+      "pre-commit": "npm run test && npm run coverage-check"
     },
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
