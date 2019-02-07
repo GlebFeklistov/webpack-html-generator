@@ -1,6 +1,6 @@
 # HTML Webpack Template
 
-[![build](https://travis-ci.org/glebfeklistov/webpack-html-template.svg?style=flat-square&branch=master)](https://travis-ci.org/glebfeklistov/webpack-html-template)
+[![build](https://img.shields.io/travis/glebfeklistov/webpack-html-template.svg?style=flat-square&branch=master)](https://travis-ci.org/glebfeklistov/webpack-html-template)
 [![codecov coverage](https://img.shields.io/codecov/c/github/glebfeklistov/webpack-html-template.svg?style=flat-square)](https://codecov.io/github/glebfeklistov/webpack-html-template)
 [![version](https://img.shields.io/npm/v/webpack-html-template.svg?style=flat-square)](http://npm.im/webpack-html-template)
 [![MIT License](https://img.shields.io/npm/l/webpack-html-template.svg?style=flat-square)](http://opensource.org/licenses/MIT)
