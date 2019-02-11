@@ -154,7 +154,9 @@ describe('generator', () => {
       .with.have.string('__REDUX__')
       .with.have.string('</script>')
       .with.have.string('<link rel="stylesheet" href="/1.css"/>')
+      .with.have.string('<link rel="stylesheet" href="/2.css"/>')
       .with.have.string('<script src="/1.js"></script>')
+      .with.have.string('<script src="/2.js"></script>')
       .with.have.string('</body>')
       .with.have.string('</html>')
   });
@@ -172,7 +174,9 @@ describe('generator', () => {
       .with.have.string('__REDUX__')
       .with.have.string('</script>')
       .with.have.string('<link rel="stylesheet" href="/1.css"/>')
+      .with.have.string('<link rel="stylesheet" href="/2.css"/>')
       .with.have.string('<script src="/1.js"></script>')
+      .with.have.string('<script src="/2.js"></script>')
       .with.have.string('</body>')
       .with.have.string('</html>')
   });
