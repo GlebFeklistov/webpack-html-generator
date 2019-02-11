@@ -1,16 +1,16 @@
 const {expect} = require('chai');
-const component = require('../../lib/generator/css');
+const component = require('../../lib/generator/chunks');
 
-describe('css', () => {
+describe('chunks', () => {
   it('zero config', () => {
     expect(component()).to.be.a('null');
   });
 
   it('full config', () => {
-    expect(component(['/1.css', '/2.css']))
+    expect(component({main: '/1.js', vendors: '/2.js'}))
       .to.be.a('array')
       .with.length(2)
-      .with.deep.include({ link: { rel: 'stylesheet', href: '/1.css' } })
-      .with.deep.include({ link: { rel: 'stylesheet', href: '/2.css' } })
+      .with.deep.include({script: {src: '/1.js'}})
+      .with.deep.include({script: {src: '/2.js'}})
   });
 });

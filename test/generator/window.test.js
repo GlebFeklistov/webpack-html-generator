@@ -10,9 +10,9 @@ describe('window', () => {
     expect(component({
       __INIT__: JSON.stringify({name: 'John Doe'}),
       __REDUX__: JSON.stringify({app: 'Application'}),
-    })).to.be.a('array')
-      .with.length(3)
-      .with.include('script')
-      .with.include('script')
+    })).to.be.a('object')
+      .with.deep.nested.property('script.innerHTML')
+      .with.have.string('__INIT__')
+      .with.have.string('__REDUX__')
   });
 });

@@ -47,6 +47,11 @@ const dataObject = {
           window: {
             __INIT__: JSON.stringify({name: 'John Doe'}),
             __REDUX__: JSON.stringify({app: 'Application'})
+          },
+          css: ['/1.css', '/2.css'],
+          chunks: {
+            main: '/1.js',
+            vendors: '/2.js'
           }
         }
       }
@@ -117,6 +122,13 @@ const dataArray = {
               __INIT__: JSON.stringify({name: 'John Doe'}),
               __REDUX__: JSON.stringify({app: 'Application'})
             }
+          }, {
+            css: ['/1.css', '/2.css']
+          }, {
+            chunks: {
+              main: '/1.js',
+              vendors: '/2.js'
+            }
           }]
       }
     }
@@ -141,6 +153,8 @@ describe('generator', () => {
       .with.have.string('__INIT__')
       .with.have.string('__REDUX__')
       .with.have.string('</script>')
+      .with.have.string('<link rel="stylesheet" href="/1.css"/>')
+      .with.have.string('<script src="/1.js"></script>')
       .with.have.string('</body>')
       .with.have.string('</html>')
   });
@@ -157,6 +171,8 @@ describe('generator', () => {
       .with.have.string('__INIT__')
       .with.have.string('__REDUX__')
       .with.have.string('</script>')
+      .with.have.string('<link rel="stylesheet" href="/1.css"/>')
+      .with.have.string('<script src="/1.js"></script>')
       .with.have.string('</body>')
       .with.have.string('</html>')
   });
