@@ -4,12 +4,16 @@ const fs = require('fs');
 const component = lodash.template(fs.readFileSync(require('../lib/index'), 'utf-8'));
 
 const config = {
+  files: {
+    css: ['/1.css', '/2.css'],
+    chunks: {main: {entry: '/main.js'}, vendors: {entry: '/vendors.js'}}
+  },
   options: {
     lang: 'en',
     manifest: 'app.manifest',
     dir: 'ltr',
     head: {
-      title: 'Object mode',
+      title: 'Application title',
       base: {
         href: 'http://localhost'
       },
@@ -51,13 +55,6 @@ const config = {
         __INIT__: JSON.stringify({name: 'John Doe'}),
         __REDUX__: JSON.stringify({app: 'Application'})
       }
-    }, {
-      css: ['/1.css', '/2.css']
-    }, {
-      chunks: {
-        main: '/1.js',
-        vendors: '/2.js'
-      }
     }]
   }
 };
@@ -72,18 +69,18 @@ describe('html-webpack-template', () => {
       const result = component({require: require, htmlWebpackPlugin: config});
       expect(result).to.be.a('string')
         .with.have.string('<html lang="en" manifest="app.manifest" dir="ltr">')
-        .with.have.string('<head><title>Object mode</title>')
+        .with.have.string('<head><title>Application title</title>')
         .with.have.string('<meta charset="utf-8"/>')
+        .with.have.string('<link rel="stylesheet" href="/1.css"/>')
+        .with.have.string('<link rel="stylesheet" href="/2.css"/>')
         .with.have.string('</head>')
         .with.have.string('<body>')
         .with.have.string('<script>')
         .with.have.string('__INIT__')
         .with.have.string('__REDUX__')
         .with.have.string('</script>')
-        .with.have.string('<link rel="stylesheet" href="/1.css"/>')
-        .with.have.string('<link rel="stylesheet" href="/2.css"/>')
-        .with.have.string('<script src="/1.js"></script>')
-        .with.have.string('<script src="/2.js"></script>')
+        .with.have.string('<script src="/main.js"></script>')
+        .with.have.string('<script src="/vendors.js"></script>')
         .with.have.string('</body>')
         .with.have.string('</html>')
     });
@@ -94,8 +91,8 @@ describe('html-webpack-template', () => {
           options: {
             body: {
               window: {},
-              chunks: {},
-              css: []
+              jsChunks: [],
+              cssChunks: []
             }
           }
         }
