@@ -5,7 +5,7 @@ const component = lodash.template(fs.readFileSync(require('../lib/index'), 'utf-
 
 const config = {
   files: {
-    css: ['/1.css', '/2.css'],
+    css: ['/main.css', '/vendors.css'],
     chunks: {main: {entry: '/main.js'}, vendors: {entry: '/vendors.js'}}
   },
   options: {
@@ -71,8 +71,8 @@ describe('html-webpack-template', () => {
         .with.have.string('<html lang="en" manifest="app.manifest" dir="ltr">')
         .with.have.string('<head><title>Application title</title>')
         .with.have.string('<meta charset="utf-8"/>')
-        .with.have.string('<link rel="stylesheet" href="/1.css"/>')
-        .with.have.string('<link rel="stylesheet" href="/2.css"/>')
+        .with.have.string('<link rel="stylesheet" href="/main.css"/>')
+        .with.have.string('<link rel="stylesheet" href="/vendors.css"/>')
         .with.have.string('</head>')
         .with.have.string('<body>')
         .with.have.string('<script>')
