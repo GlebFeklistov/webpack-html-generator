@@ -15,7 +15,7 @@ It has a many extra features than the [default template](https://github.com/jant
 * Auto inject webpack chunks and styles with zero configuration.
 * Custom webpack chunks position output, self chunks or disable it.
 * Set initial state for [redux](https://redux.js.org) or another solutions who needs global variable in window.
-* May set attributes to <body> tag
+* May set attributes to <body> tag.
 * Any tags or other html elements and it attributes.
 * Any count mount application points.
 * Compatible with other [html-webpack-plugins](https://github.com/jantimon/html-webpack-plugin).
@@ -36,6 +36,7 @@ To make it work, you need to provide these **required parameters**:
 - `template: require('webpack-html-template')`
 
 And you can provide some **optional parameters**:
+
 - `lang`: The `lang` attribute for html tag.
 - `manifest`: The `manifest` attribute for html tag.
 - `dir`: The `dir` attribute for html tag.
