@@ -173,6 +173,7 @@ Here's an full example for webpack config illustrating how to use these options 
           name: 'description',
           content: 'A better default template for html-webpack-plugin'
         }]
+        //  webpack bundles styles injects in this place
       },
       body: {
         div: [{
@@ -183,6 +184,7 @@ Here's an full example for webpack config illustrating how to use these options 
         window: {
           __INITIAL_STATE__: JSON.stringify({a: true, b: 'John Doe'})
         }
+        //  webpack bundles script injects in this place
       }
     }),
     new FaviconsWebpackPlugin({
