@@ -7,9 +7,10 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
 
 This is a clear and powerful template for the [webpack](http://webpack.github.io/) plugin [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin).
-It has a many extra features than the [default template](https://github.com/jantimon/html-webpack-plugin/blob/master/default_index.ejs).
+It has a many extra features than the [default template](https://github.com/jantimon/html-webpack-plugin/blob/master/default_index.ejs) and [html-webpack-template project](https://github.com/jaketrent/html-webpack-template).
 You have full control of generated template with few line config.
 No provided default tags or attributes without your needs.
+You can set position for output webpack js chunks and styles or disable it output in html and set initial state for application used [redux](https://redux.js.org) or another solutions.
 Compatible with other [html-webpack-plugins](https://github.com/jantimon/html-webpack-plugin).
 
 ## Installation
