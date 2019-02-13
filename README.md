@@ -40,6 +40,7 @@ And you can provide some **optional parameters**:
 - `manifest`: The `manifest` attribute for html tag.
 - `dir`: The `dir` attribute for html tag.
 - `head`: The `<head>` tag configuration.
+  - custom header initialization
   ```js
   head: {
       title: 'Application title', // title tag with inner text
@@ -66,9 +67,9 @@ In any position in `<head>` or `<body>` you can place special tags
 - `jsChunks`:The `<script>`  marker for output webpack js chunks
 
 `ccsChunks` and `jsChunks` can accepts parameters such as:
-- true, marker to insert scripts and styles from webpack build
-- false, marker to disable insert anyone script or style from webpack build
-- [Array], string array with paths to custom bundle scripts or styles
+- true, marker to insert scripts and styles from webpack build.
+- false, marker to disable insert anyone script or style from webpack build.
+- [Array], string array with paths to custom bundle scripts or styles.
 
 ### Example
 
