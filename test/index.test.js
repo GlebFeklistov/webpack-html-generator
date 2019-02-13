@@ -3,11 +3,13 @@ const lodash = require('lodash');
 const fs = require('fs');
 const component = lodash.template(fs.readFileSync(require('../lib/index'), 'utf-8'));
 
+const files = {
+  css: ['/main.css', '/vendors.css'],
+  chunks: {main: {entry: '/main.js'}, vendors: {entry: '/vendors.js'}}
+};
+
 const config = {
-  files: {
-    css: ['/main.css', '/vendors.css'],
-    chunks: {main: {entry: '/main.js'}, vendors: {entry: '/vendors.js'}}
-  },
+  files,
   options: {
     lang: 'en',
     manifest: 'app.manifest',
@@ -85,9 +87,29 @@ describe('html-webpack-template', () => {
         .with.have.string('</html>')
     });
 
+    it('prevent webpack', () => {
+      const result = component({
+        require: require, htmlWebpackPlugin: {
+          files,
+          options: {
+            body: {
+              jsChunks: false,
+              cssChunks: false,
+            }
+          }
+        }
+      });
+      expect(result).to.be.a('string')
+        .with.not.have.string('<link rel="stylesheet" href="/main.css"/>')
+        .with.not.have.string('<link rel="stylesheet" href="/vendors.css"/>')
+        .with.not.have.string('<script src="/main.js"></script>')
+        .with.not.have.string('<script src="/vendors.js"></script>')
+    });
+
     it('empty extensions', () => {
       const result = component({
         require: require, htmlWebpackPlugin: {
+          files,
           options: {
             body: {
               window: {},
@@ -98,6 +120,10 @@ describe('html-webpack-template', () => {
         }
       });
       expect(result).to.be.a('string')
+        .with.not.have.string('<link rel="stylesheet" href="/main.css"/>')
+        .with.not.have.string('<link rel="stylesheet" href="/vendors.css"/>')
+        .with.not.have.string('<script src="/main.js"></script>')
+        .with.not.have.string('<script src="/vendors.js"></script>')
     });
   }
 );
