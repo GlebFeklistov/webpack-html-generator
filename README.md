@@ -11,12 +11,12 @@ This is a clear and powerful template for the [webpack](http://webpack.github.io
 It has a many extra features than the [default template](https://github.com/jantimon/html-webpack-plugin/blob/master/default_index.ejs) and [html-webpack-template project](https://github.com/jaketrent/html-webpack-template).
 
 * You have full control of generated template with few line config.
-* Set initial state for [redux](https://redux.js.org) or another solutions who needs global variable in window.
-* No provided default tags or attributes without your needs.
-* Custom webpack chunks position output.
+* No provided default tags or attributes without your needs, only webpack bundles.
 * Auto inject webpack chunks and styles with zero configuration.
+* Custom webpack chunks position output, self chunks or disable it.
+* Set initial state for [redux](https://redux.js.org) or another solutions who needs global variable in window.
 * May set attributes to <body> tag
-* Any tags or other html elements and attributes.
+* Any tags or other html elements and it attributes.
 * Any count mount application points.
 * Compatible with other [html-webpack-plugins](https://github.com/jantimon/html-webpack-plugin).
 
@@ -25,7 +25,7 @@ It has a many extra features than the [default template](https://github.com/jant
 Install the template in your project with npm:
 
 ```shell
-$ npm i html-webpack-template
+$ npm i webpack-html-template
 ```
 
 ## Basic Usage
@@ -33,7 +33,7 @@ $ npm i html-webpack-template
 To make it work, you need to provide these **required parameters**:
 
 - `inject: false`
-- `template: require('html-webpack-template')`
+- `template: require('webpack-html-template')`
 
 And you can provide some **optional parameters**:
 - `lang`: The `lang` attribute for html tag.
