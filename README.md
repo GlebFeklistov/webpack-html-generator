@@ -40,14 +40,14 @@ And you can provide some **optional parameters**:
 - `manifest`: The `manifest` attribute for html tag.
 - `dir`: The `dir` attribute for html tag.
 - `head`: The `<head>` tag configuration.
-  - custom header initialization
+  - simple head configuration
   ```js
   head: {
-      title: 'Application title', // title tag with inner text
+      title: 'Application title', //  title tag with inner text
       base: {             
-        href: 'https://domain.com'  // base tag with href attribute
+        href: 'https://domain.com'  //  base tag with href attribute
       },
-      meta: [{  // group of meta tags with their attributes
+      meta: [{  //  group of meta tags with their attributes
         charset: 'utf-8'
       }, {
         name: 'viewport',
@@ -56,10 +56,26 @@ And you can provide some **optional parameters**:
         name: 'description',
         content: 'A better default template for html-webpack-plugin.'
       }],
-      ccsChunks: true // marker for webpack style chunks output with link tags
+      ccsChunks: true //  marker for webpack style chunks output with link tags
     }
   ```
 - `body`: The `<body>` tag configuration.
+  - simple body configuration
+  ```js
+  body: [{
+      canvas: { //  other application mount point
+        id: 'canvas'
+      }
+    }, {
+      div: {  //  react app mount point
+        id: 'root'
+      }
+    }, {
+      window: { //  redux initial state
+        __REDUX__: JSON.stringify({app: 'Application'})
+      }
+    }]
+  ```
 
 In any position in `<head>` or `<body>` you can place special tags
 - `window`: The `<script>` tag to pass initial values for application or other data to global visible scope in window.
@@ -71,9 +87,70 @@ In any position in `<head>` or `<body>` you can place special tags
 - false, marker to disable insert anyone script or style from webpack build.
 - [Array], string array with paths to custom bundle scripts or styles.
 
-### Example
+### Examples
 
-Here's an example webpack config illustrating how to use these options in your `webpack.config.js`:
+Here's an example illustrating disabling webpack output:
+
+```js
+{
+  // ...
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: require('webpack-html-template'),
+      head: {
+        cssChunks: false,  //  marker for disable webpack application styles
+        jsChunks: false,  //  marker for disable webpack application scripts
+      }
+    }),
+    // ...
+  ]
+}
+```
+
+Here's an example with custom position of output webpack bundles:
+
+```js
+{
+  // ...
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: require('webpack-html-template'),
+      head: {
+        title: 'App title',
+        cssChunks: true,  //  marker for webpack application styles
+        meta: [{
+          charset: 'utf-8'
+        }, {
+          content: 'ie=edge',
+          'http-equiv': 'x-ua-compatible'
+        }, {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1'
+        }, {
+          name: 'description',
+          content: 'A better default template for html-webpack-plugin'
+        }]
+      },
+      body: {
+        jsChunks: true,  //  marker for webpack application scripts
+        div: [{
+          id: 'canvas'
+        }, {
+          id: 'root'
+        }],
+        window: {
+          __INITIAL_STATE__: JSON.stringify({a: true, b: 'John Doe'})
+        }
+      }
+    }),
+    // ...
+  ]
+}
+```
+
+Here's an full example for webpack config illustrating how to use these options in your `webpack.config.js`:
 
 ```js
 {
@@ -98,20 +175,11 @@ Here's an example webpack config illustrating how to use these options in your `
         }]
       },
       body: {
-        script: [{
-          src: '/bootstrap.js'
-        }],
         div: [{
           id: 'canvas'
         }, {
           id: 'root'
         }],
-        span: {
-          innerHTML: '<div>Hello world</div>'
-        },
-        img: {
-          src: '/logo.png'
-        },
         window: {
           __INITIAL_STATE__: JSON.stringify({a: true, b: 'John Doe'})
         }
@@ -130,65 +198,3 @@ Here's an example webpack config illustrating how to use these options in your `
 }
 ```
 
-Another example with different body tags configuration concept and identical output
-
-```js
-{
-  // ...
-  plugins: [
-    new HtmlWebpackPlugin({
-      inject: false,
-      template: require('webpack-html-template'),
-      head: {
-        title: 'App title',
-        meta: [{
-          charset: 'utf-8'
-        }, {
-          content: 'ie=edge',
-          'http-equiv': 'x-ua-compatible'
-        }, {
-          name: 'viewport',
-          content: 'width=device-width, initial-scale=1'
-        }, {
-          name: 'description',
-          content: 'A better default template for html-webpack-plugin'
-        }]
-      },
-      body: [{
-        script: {
-          src: '/bootstrap.js'
-        }
-      }, {
-        div: {
-          id: 'canvas'
-        }
-      }, {
-        div: {
-          id: 'root'
-        }
-      }, {
-        span: {
-          innerHTML: '<div>Hello world</div>'
-        }
-      }, {
-        img: {
-          src: '/logo.png'
-        }
-      }, {
-        window: {
-          __INITIAL_STATE__: JSON.stringify({a: true, b: 'John Doe'})
-        }
-      }]
-    }),
-    new FaviconsWebpackPlugin({
-      inject: true,
-      logo: './src/logo.png'
-    }),
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    }),
-    new webpack.HotModuleReplacementPlugin()
-  ]
-}
-```
