@@ -79,8 +79,8 @@ And you can provide some **optional parameters**:
 
 In any position in `<head>` or `<body>` you can place special tags
 - `window`: The `<script>` tag to pass initial values for application or other data to global visible scope in window.
-- `ccsChunks`: The `<link>` marker for output webpack styles chunks
-- `jsChunks`:The `<script>`  marker for output webpack js chunks
+- `ccsChunks`: The `<link>` tag for output webpack styles chunks
+- `jsChunks`:The `<script>` tag for output webpack js chunks
 
 `ccsChunks` and `jsChunks` can accepts parameters such as:
 - true, marker to insert scripts and styles from webpack build.
