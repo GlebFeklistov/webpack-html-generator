@@ -40,8 +40,35 @@ And you can provide some **optional parameters**:
 - `manifest`: The `manifest` attribute for html tag.
 - `dir`: The `dir` attribute for html tag.
 - `head`: The `<head>` tag configuration.
+  ```js
+  head: {
+      title: 'Application title', // title tag with inner text
+      base: {             
+        href: 'https://domain.com'  // base tag with href attribute
+      },
+      meta: [{  // group of meta tags with their attributes
+        charset: 'utf-8'
+      }, {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      }, {
+        name: 'description',
+        content: 'A better default template for html-webpack-plugin.'
+      }],
+      ccsChunks: true // marker for webpack style chunks output with link tags
+    }
+  ```
 - `body`: The `<body>` tag configuration.
-  - `window`: The custom `<script>` tag to pass initial values for application.
+
+In any position in `<head>` or `<body>` you can place special tags
+- `window`: The `<script>` tag to pass initial values for application or other data to global visible scope in window.
+- `ccsChunks`: The `<link>` marker for output webpack styles chunks
+- `jsChunks`:The `<script>`  marker for output webpack js chunks
+
+`ccsChunks` and `jsChunks` can accepts parameters such as:
+- true, marker to insert scripts and styles from webpack build
+- false, marker to disable insert anyone script or style from webpack build
+- [Array], string array with paths to custom bundle scripts or styles
 
 ### Example
 
