@@ -84,9 +84,9 @@ In any position in `<head>` or `<body>` you can place special tags
 - `jsChunks`:The `<script>` tag for output webpack js chunks
 
 `ccsChunks` and `jsChunks` can accepts parameters such as:
-- true, marker to insert scripts and styles from webpack build.
-- false, marker to disable insert anyone script or style from webpack build.
-- [Array], string array with paths to custom bundle scripts or styles.
+- true - marker to insert scripts and styles from webpack build.
+- false - marker to disable insert anyone script or style from webpack build.
+- [Array] - string array with paths to custom bundle scripts or styles.
 
 ### Examples
 
