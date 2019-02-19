@@ -90,7 +90,7 @@ In any position in `<head>` or `<body>` you can place special tags
 
 ### Examples
 
-Here's an example illustrating disabling webpack output:
+Here's an example illustrating disabling webpack output in your `webpack.config.js`:
 
 ```js
 {
@@ -109,7 +109,7 @@ Here's an example illustrating disabling webpack output:
 }
 ```
 
-Here's an example with custom position of output webpack bundles:
+Here's an example with custom position of output webpack bundles in your `webpack.config.js`:
 
 ```js
 {
