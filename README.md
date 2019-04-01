@@ -25,7 +25,7 @@ It has a many extra features than the [default template](https://github.com/jant
 Install the template in your project with npm:
 
 ```shell
-$ npm i -D webpack-html-template
+$ npm i webpack-html-template
 ```
 
 ## Basic Usage
