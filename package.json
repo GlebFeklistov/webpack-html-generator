@@ -1,7 +1,7 @@
 {
   "name": "webpack-html-template",
-  "version": "1.0.0",
-  "description": "Webpack ",
+  "version": "1.0.10",
+  "description": "Clear and powerful template for the webpack plugin html-webpack-plugin",
   "main": "lib/index.js",
   "scripts": {
     "commit": "git-cz",
