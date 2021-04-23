@@ -35,7 +35,7 @@
     "lodash": "^4.17.11",
     "mocha": "^5.2.0",
     "nyc": "^13.2.0",
-    "semantic-release": "^15.13.3"
+    "semantic-release": "^17.2.3"
   },
   "config": {
     "ghooks": {
